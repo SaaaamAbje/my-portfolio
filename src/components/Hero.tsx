@@ -1,0 +1,40 @@
+import { ArrowRight } from "lucide-react";
+import { hero } from "@/lib/content";
+
+export function Hero() {
+  return (
+    <section id="top" aria-labelledby="hero-heading">
+      <div className="mx-auto max-w-5xl px-6 pb-20 pt-20 sm:pb-28 sm:pt-28">
+        <p className="text-sm text-muted">{hero.eyebrow}</p>
+        <h1 id="hero-heading" className="mt-5 max-w-3xl text-4xl leading-[1.1] text-ink sm:text-6xl">
+          {hero.heading}
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{hero.intro}</p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 bg-accent px-5 py-3 text-sm font-medium text-white hover:bg-ink"
+          >
+            View projects
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+          <a href="#contact" className="text-sm font-medium text-ink underline underline-offset-4 hover:text-accent">
+            Get in touch
+          </a>
+        </div>
+
+        <dl className="mt-16 grid max-w-2xl gap-6 border-t border-line pt-8 text-sm sm:grid-cols-2">
+          <div>
+            <dt className="text-muted">Current focus</dt>
+            <dd className="mt-1 text-ink">{hero.focus}</dd>
+          </div>
+          <div>
+            <dt className="text-muted">Availability</dt>
+            <dd className="mt-1 text-ink">{hero.availability}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  );
+}
