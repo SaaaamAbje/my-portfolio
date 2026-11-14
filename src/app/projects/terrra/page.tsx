@@ -336,11 +336,6 @@ export default function TerrraCaseStudy() {
             3.93.
           </p>
           <p>
-            The perceived educational value received a mean of 4.03, while the belief that the
-            application could contribute to positive long-term community changes received a mean of
-            4.06.
-          </p>
-          <p>
             The study also found a moderate positive correlation between environmental awareness and
             application acceptability (Pearson r = 0.631, p &lt; 0.001).
           </p>
