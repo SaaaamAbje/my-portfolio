@@ -6,7 +6,7 @@ export function Contact() {
   const emailReady = !isPlaceholder(contact.email);
 
   return (
-    <Section id="contact" label="Contact" title={contact.heading}>
+    <Section id="contact" label="Contact" title={contact.heading} layout="split">
       <p className="max-w-2xl text-lg leading-relaxed text-muted">{contact.text}</p>
 
       <div className="mt-10">

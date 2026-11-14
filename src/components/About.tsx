@@ -3,17 +3,17 @@ import { Section } from "./Section";
 
 export function About() {
   return (
-    <Section id="about" label="About" title="A bit about me">
-      <div className="grid gap-12 md:grid-cols-[3fr_2fr] md:gap-16">
+    <Section id="about" label="About" title="A bit about me" layout="split">
+      <div className="max-w-2xl space-y-12">
         <div className="space-y-5 text-lg leading-relaxed text-muted">
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
-        <dl className="divide-y divide-line border-y border-line text-sm">
+        <dl className="grid border-t border-line text-sm sm:grid-cols-2 sm:gap-x-10">
           {about.facts.map((fact) => (
-            <div key={fact.label} className="py-4">
+            <div key={fact.label} className="border-b border-line py-4">
               <dt className="text-muted">{fact.label}</dt>
               <dd className="mt-1 text-ink">{fact.value}</dd>
             </div>
