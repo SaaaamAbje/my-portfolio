@@ -62,13 +62,13 @@ export default function TerrraCaseStudy() {
           title="Terrra"
           subtitle="Designing a Community-Based Waste Management and Environmental Awareness Application"
           meta={[
-            { label: "Project Type", value: "UI/UX Design · Academic Research · Mobile Application Concept" },
+            { label: "Project Type", value: "UI/UX Design · Academic Research · Mobile Application Concept · Senior High School Capstone" },
             { label: "Project Location", value: "Barangay Mataas na Lupa, Lipa City, Batangas" },
             { label: "Platform", value: "Mobile Application" },
             { label: "Role", value: "[Your Role / Specific Contributions]" },
             { label: "Tools", value: "[Figma / Other Tools Used]" },
-            { label: "Project Duration", value: "[Insert Duration]" },
-            { label: "Team", value: "[Individual / Group Project]" },
+            { label: "Project Duration", value: "Academic Year 2023–2024" },
+            { label: "Team", value: "Group of 9 (SHS capstone)" },
           ]}
         />
 

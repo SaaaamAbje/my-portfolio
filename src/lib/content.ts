@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "A proposed community-based waste management and environmental awareness mobile app, shaped by research with residents of Barangay Mataas na Lupa, Lipa City.",
     role: "[Your Role / Specific Contributions]",
     tools: "[Figma / Other Tools Used]",
-    year: "[Add year]",
+    year: "2023–2024",
     caseStudy: "/projects/terrra",
   },
   {
