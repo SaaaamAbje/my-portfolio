@@ -16,7 +16,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: site.title,
+  title: { default: site.title, template: site.titleTemplate },
   description: site.description,
 };
 

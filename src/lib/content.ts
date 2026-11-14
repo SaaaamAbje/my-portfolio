@@ -9,15 +9,17 @@ export const site = {
   role: "UI/UX Designer and Frontend Developer",
   school: "BSIT, De La Salle Lipa",
   title: "[Your Name] | UI/UX Design and Frontend Development",
+  /** Appended to every sub-page title, e.g. "Terrra case study | [Your Name]". */
+  titleTemplate: "%s | [Your Name]",
   description:
     "Portfolio of [Your Name], a third-year BSIT student at De La Salle Lipa focused on UI/UX design and frontend development.",
 };
 
 export const navLinks = [
-  { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export const hero = {
@@ -37,6 +39,8 @@ export type Project = {
   role: string;
   tools: string;
   year: string;
+  /** Route of the full case study, once it exists. */
+  caseStudy?: string;
 };
 
 export const projects: Project[] = [
@@ -44,10 +48,12 @@ export const projects: Project[] = [
     slug: "terrra",
     title: "Terrra",
     category: "UI/UX",
-    summary: "[Add a one-sentence summary of the problem and what you designed.]",
-    role: "[Add your role]",
-    tools: "[Add tools used]",
+    summary:
+      "A proposed community-based waste management and environmental awareness mobile app, shaped by research with residents of Barangay Mataas na Lupa, Lipa City.",
+    role: "[Your Role / Specific Contributions]",
+    tools: "[Figma / Other Tools Used]",
     year: "[Add year]",
+    caseStudy: "/projects/terrra",
   },
   {
     slug: "viore",

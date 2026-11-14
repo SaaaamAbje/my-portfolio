@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks, site } from "@/lib/content";
 
@@ -20,17 +21,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <a href="#top" className="font-serif text-lg text-ink" onClick={() => setOpen(false)}>
+        <Link href="/" className="font-serif text-lg text-ink" onClick={() => setOpen(false)}>
           {site.name}
-        </a>
+        </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-8 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="text-muted hover:text-ink">
+                <Link href={link.href} className="text-muted hover:text-ink">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -53,13 +54,13 @@ export function SiteHeader() {
           <ul className="mx-auto max-w-5xl px-6 py-2">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   className="block py-3 text-base text-ink"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
