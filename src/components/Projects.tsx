@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { projects, type Project } from "@/lib/content";
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import { ProjectImage } from "./ProjectImage";
 import { Section } from "./Section";
 
 /*
@@ -47,7 +47,10 @@ export function Projects() {
           return (
             <li key={project.slug} className="grid items-center gap-8 md:grid-cols-[3fr_2fr] md:gap-14">
               <div className={reversed ? "md:order-last" : undefined}>
-                <ImagePlaceholder label={project.title} aspect="aspect-[16/10]" />
+                <ProjectImage
+                  project={project}
+                  sizes="(min-width: 1024px) 585px, (min-width: 768px) 60vw, 100vw"
+                />
               </div>
 
               <div>

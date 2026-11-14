@@ -11,7 +11,9 @@ import {
   SubHeading,
 } from "@/components/case-study/CaseStudy";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { ProjectImage } from "@/components/ProjectImage";
 import { SiteHeader } from "@/components/SiteHeader";
+import { projects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Terrra case study",
@@ -24,6 +26,8 @@ export const metadata: Metadata = {
   filled in. Replace each ImagePlaceholder with a real image when screenshots
   are ready.
 */
+
+const terrra = projects.find((project) => project.slug === "terrra")!;
 
 const findings = [
   { indicator: "Awareness of waste management", mean: "3.02", interpretation: "High" },
@@ -73,7 +77,7 @@ export default function TerrraCaseStudy() {
         />
 
         <div className="mx-auto max-w-5xl px-6 pb-16 sm:pb-20">
-          <ImagePlaceholder label="Terrra cover image" note="[Insert cover image]" aspect="aspect-[16/9]" />
+          <ProjectImage project={terrra} sizes="(min-width: 1024px) 976px, 100vw" preload />
         </div>
 
         <CaseSection id="overview" number="01" title="Project Overview">

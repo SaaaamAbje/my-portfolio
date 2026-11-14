@@ -40,6 +40,12 @@ export type Project = {
   year: string;
   /** Route of the full case study, once it exists. */
   caseStudy?: string;
+  /**
+   * Project thumbnail. Export at 1600×1000 (16:10) into public/projects/<slug>/,
+   * e.g. { src: "/projects/terrra/cover.png", alt: "Terrra home, tracker and learning screens" }.
+   * Describe what the screens show in alt. Until set, a neutral placeholder is shown.
+   */
+  image?: { src: string; alt: string };
 };
 
 export const projects: Project[] = [
