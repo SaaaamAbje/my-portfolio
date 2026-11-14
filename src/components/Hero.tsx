@@ -19,9 +19,6 @@ export function Hero() {
             View projects
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
-          <a href="#contact" className="text-base font-medium text-ink underline underline-offset-4 hover:text-accent">
-            Get in touch
-          </a>
         </div>
 
         <dl className="mt-16 grid max-w-2xl gap-6 border-t border-line pt-8 text-base sm:grid-cols-2">

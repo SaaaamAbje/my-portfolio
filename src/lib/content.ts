@@ -131,10 +131,11 @@ export const contact = {
   heading: "Let's talk about an internship.",
   text: "[Add a sentence about the kind of internship or team you're looking for.]",
   email: "[Add email address]",
+  /** Put the PDF in public/ (e.g. public/resume.pdf) and set href to "/resume.pdf". */
+  resume: { label: "Download résumé (PDF)", href: "[Add résumé PDF]" },
   links: [
     { label: "LinkedIn", href: "[Add LinkedIn URL]" },
     { label: "GitHub", href: "[Add GitHub URL]" },
-    { label: "Résumé (PDF)", href: "[Add résumé link]" },
   ],
 };
 
