@@ -20,7 +20,11 @@ type ProjectImageProps = {
  */
 export function ProjectImage({ project, sizes, preload = false }: ProjectImageProps) {
   if (!project.image) {
-    return <ImagePlaceholder label={project.title} aspect="aspect-[16/10]" />;
+    return (
+      <div className="transition-transform duration-500 ease-out-soft group-hover:scale-[1.03]">
+        <ImagePlaceholder label={project.title} aspect="aspect-[16/10]" />
+      </div>
+    );
   }
   return (
     <Image
@@ -30,7 +34,7 @@ export function ProjectImage({ project, sizes, preload = false }: ProjectImagePr
       height={PROJECT_IMAGE_HEIGHT}
       sizes={sizes}
       preload={preload}
-      className="h-auto w-full border border-line bg-subtle"
+      className="h-auto w-full border border-line bg-subtle transition-transform duration-500 ease-out-soft group-hover:scale-[1.03]"
     />
   );
 }

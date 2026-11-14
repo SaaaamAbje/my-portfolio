@@ -14,6 +14,7 @@ import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ProjectImage } from "@/components/ProjectImage";
 import { SiteHeader } from "@/components/SiteHeader";
 import { projects } from "@/lib/content";
+import { delay } from "@/lib/motion";
 
 export const metadata: Metadata = {
   title: "Terrra case study",
@@ -55,9 +56,9 @@ export default function TerrraCaseStudy() {
         <div className="mx-auto max-w-5xl px-6 pt-8">
           <Link
             href="/#projects"
-            className="inline-flex min-h-11 items-center gap-2 text-base text-muted hover:text-ink"
+            className="group inline-flex min-h-11 items-center gap-2 text-base text-muted transition-colors duration-200 hover:text-ink"
           >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
             All projects
           </Link>
         </div>
@@ -76,7 +77,7 @@ export default function TerrraCaseStudy() {
           ]}
         />
 
-        <div className="mx-auto max-w-5xl px-6 pb-16 sm:pb-20">
+        <div className="animate-intro mx-auto max-w-5xl px-6 pb-16 sm:pb-20" style={delay(360)}>
           <ProjectImage project={terrra} sizes="(min-width: 1024px) 976px, 100vw" preload />
         </div>
 
@@ -392,9 +393,9 @@ export default function TerrraCaseStudy() {
               </p>
               <Link
                 href="/#projects"
-                className="inline-flex min-h-11 items-center gap-2 text-base font-medium text-ink hover:text-accent"
+                className="group inline-flex min-h-11 items-center gap-2 text-base font-medium text-ink transition-colors duration-200 hover:text-accent"
               >
-                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
                 Back to all projects
               </Link>
             </div>

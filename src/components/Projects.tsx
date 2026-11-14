@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { projects, type Project } from "@/lib/content";
+import { delay, STAGGER } from "@/lib/motion";
 import { ProjectImage } from "./ProjectImage";
 import { Section } from "./Section";
 
@@ -13,7 +14,7 @@ const development = projects.filter((project) => project.category !== "UI/UX");
 
 function ProjectTitle({ project }: { project: Project }) {
   return project.caseStudy ? (
-    <Link href={project.caseStudy} className="hover:text-accent">
+    <Link href={project.caseStudy} className="transition-colors duration-200 hover:text-accent">
       {project.title}
     </Link>
   ) : (
@@ -28,11 +29,14 @@ function CaseStudyLink({ project }: { project: Project }) {
   return (
     <Link
       href={project.caseStudy}
-      className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-medium text-accent underline-offset-4 hover:underline"
+      className="group/cta mt-6 inline-flex min-h-11 items-center gap-2 text-base font-medium text-accent underline-offset-4 hover:underline"
     >
       Read the case study
       <span className="sr-only">: {project.title}</span>
-      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      <ArrowRight
+        className="h-4 w-4 transition-transform duration-200 group-hover/cta:translate-x-1"
+        aria-hidden="true"
+      />
     </Link>
   );
 }
@@ -45,8 +49,12 @@ export function Projects() {
         {featured.map((project, index) => {
           const reversed = index % 2 === 1;
           return (
-            <li key={project.slug} className="grid items-center gap-8 md:grid-cols-[3fr_2fr] md:gap-14">
-              <div className={reversed ? "md:order-last" : undefined}>
+            <li
+              key={project.slug}
+              data-reveal=""
+              className="group grid items-center gap-8 md:grid-cols-[3fr_2fr] md:gap-14"
+            >
+              <div className={`overflow-hidden ${reversed ? "md:order-last" : ""}`}>
                 <ProjectImage
                   project={project}
                   sizes="(min-width: 1024px) 585px, (min-width: 768px) 60vw, 100vw"
@@ -88,9 +96,11 @@ export function Projects() {
         Development work
       </h3>
       <ul className="mt-6 border-t border-ink">
-        {development.map((project) => (
+        {development.map((project, index) => (
           <li
             key={project.slug}
+            data-reveal=""
+            style={delay(index * STAGGER)}
             className="grid gap-2 border-b border-line py-6 md:grid-cols-[16rem_1fr_9rem] md:items-baseline md:gap-8"
           >
             <div>

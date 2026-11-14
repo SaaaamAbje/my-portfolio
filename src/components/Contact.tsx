@@ -3,7 +3,7 @@ import { contact, isPlaceholder, site } from "@/lib/content";
 import { Section } from "./Section";
 
 const buttonClass =
-  "inline-flex min-h-12 items-center gap-2 bg-accent px-5 text-base font-medium text-white hover:bg-ink";
+  "inline-flex min-h-12 items-center gap-2 bg-accent px-5 text-base font-medium text-white transition-colors duration-200 hover:bg-ink";
 
 export function Contact() {
   const emailReady = !isPlaceholder(contact.email);
@@ -62,10 +62,13 @@ export function Contact() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-1 font-medium text-ink hover:text-accent"
+                className="group inline-flex min-h-11 items-center gap-1 font-medium text-ink transition-colors duration-200 hover:text-accent"
               >
                 {link.label}
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
               </a>
             )}
           </li>

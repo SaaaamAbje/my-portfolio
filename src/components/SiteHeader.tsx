@@ -29,7 +29,7 @@ export function SiteHeader() {
           <ul className="flex items-center gap-8 text-base">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-muted hover:text-ink">
+                <Link href={link.href} className="link-underline text-muted transition-colors duration-200 hover:text-ink">
                   {link.label}
                 </Link>
               </li>
@@ -50,7 +50,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line md:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="animate-menu border-t border-line md:hidden">
           <ul className="mx-auto max-w-5xl px-6 py-2">
             {navLinks.map((link) => (
               <li key={link.href}>

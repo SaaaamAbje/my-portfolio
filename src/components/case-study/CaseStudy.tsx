@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { delay } from "@/lib/motion";
 
 /*
   Building blocks for long-form case study pages.
@@ -18,11 +19,13 @@ export function CaseStudyHeader({
 }) {
   return (
     <header className="mx-auto max-w-5xl px-6 pb-16 pt-16 sm:pb-20 sm:pt-24">
-      <p className="text-sm text-muted">Case study</p>
-      <h1 className="mt-4 text-5xl leading-none text-ink sm:text-7xl">{title}</h1>
-      <p className="mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink sm:text-3xl">{subtitle}</p>
+      <p className="animate-intro text-sm text-muted">Case study</p>
+      <h1 className="animate-intro mt-4 text-5xl leading-none text-ink sm:text-7xl">{title}</h1>
+      <p className="animate-intro mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink sm:text-3xl" style={delay(120)}>
+        {subtitle}
+      </p>
 
-      <dl className="mt-14 grid gap-x-10 gap-y-6 border-t border-line pt-8 text-base sm:grid-cols-2 lg:grid-cols-4">
+      <dl style={delay(240)} className="animate-intro mt-14 grid gap-x-10 gap-y-6 border-t border-line pt-8 text-base sm:grid-cols-2 lg:grid-cols-4">
         {meta.map((item) => (
           <div key={item.label}>
             <dt className="text-sm text-muted">{item.label}</dt>
@@ -50,13 +53,15 @@ export function CaseSection({
   return (
     <section id={id} aria-labelledby={headingId} className="border-t border-line">
       <div className="mx-auto grid max-w-5xl gap-6 px-6 py-16 sm:py-20 lg:grid-cols-[14rem_1fr] lg:gap-12">
-        <div className="lg:sticky lg:top-24 lg:self-start">
+        <div data-reveal="" className="lg:sticky lg:top-24 lg:self-start">
           <p className="text-sm tabular-nums text-muted">{number}</p>
           <h2 id={headingId} className="mt-2 text-2xl text-ink sm:text-3xl">
             {title}
           </h2>
         </div>
-        <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-muted">{children}</div>
+        <div data-reveal="" style={delay(120)} className="max-w-2xl space-y-6 text-lg leading-relaxed text-muted">
+          {children}
+        </div>
       </div>
     </section>
   );

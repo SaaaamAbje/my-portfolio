@@ -13,6 +13,9 @@
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+
+  /* Motion: one easing curve for everything; enters fast, settles gently. */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* In the base layer so Tailwind utilities can override these. */
@@ -50,8 +53,102 @@
   }
 }
 
+/*
+  Motion
+  - .animate-intro: page-load fade-up (hero, case study header). Pure CSS, so it
+    also runs without JavaScript. Stagger with style={{ "--delay": "100ms" }}.
+  - [data-reveal]: fades up when scrolled into view. RevealObserver adds
+    .reveal-ready to <html> only once JavaScript runs, so content is never
+    hidden for visitors without it.
+  - .link-underline: underline that grows from the left on hover.
+  All of it is switched off for visitors who ask for reduced motion.
+*/
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer components {
+  .animate-intro {
+    animation: fade-up 800ms var(--ease-out-soft) both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .animate-menu {
+    animation: menu-in 200ms var(--ease-out-soft) both;
+  }
+
+  [data-reveal] {
+    transition:
+      opacity 700ms var(--ease-out-soft),
+      transform 700ms var(--ease-out-soft);
+    transition-delay: var(--delay, 0ms);
+  }
+
+  html.reveal-ready [data-reveal]:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms var(--ease-out-soft);
+  }
+
+  .link-underline:hover::after,
+  .link-underline[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .animate-intro,
+  .animate-menu {
+    animation: none;
+  }
+
+  html.reveal-ready [data-reveal]:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }
