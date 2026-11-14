@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/*
+  Design tokens: white background, near-black text, one blue accent.
+  Newsreader for headings (font-serif), Inter for body text (font-sans).
+*/
+@theme {
+  --color-ink: #111111;
+  --color-muted: #555555;
+  --color-line: #e5e5e5;
+  --color-subtle: #f5f5f5;
+  --color-accent: #1d4ed8;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+}
+
+/* In the base layer so Tailwind utilities can override these. */
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    /* Keeps anchored sections clear of the sticky header */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
