@@ -26,7 +26,7 @@ export function Contact() {
         )}
       </div>
 
-      <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+      <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-base">
         {contact.links.map((link) => (
           <li key={link.label}>
             {isPlaceholder(link.href) ? (
@@ -48,7 +48,7 @@ export function Contact() {
         ))}
       </ul>
 
-      <p className="mt-24 border-t border-line pt-6 text-xs text-muted">
+      <p className="mt-24 border-t border-line pt-6 text-sm text-muted">
         Designed and built by {site.name}.
       </p>
     </Section>

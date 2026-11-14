@@ -11,10 +11,10 @@ export function About() {
           ))}
         </div>
 
-        <dl className="grid border-t border-line text-sm sm:grid-cols-2 sm:gap-x-10">
+        <dl className="grid border-t border-line text-base sm:grid-cols-2 sm:gap-x-10">
           {about.facts.map((fact) => (
             <div key={fact.label} className="border-b border-line py-4">
-              <dt className="text-muted">{fact.label}</dt>
+              <dt className="text-sm text-muted">{fact.label}</dt>
               <dd className="mt-1 text-ink">{fact.value}</dd>
             </div>
           ))}

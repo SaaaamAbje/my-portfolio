@@ -22,10 +22,10 @@ export function CaseStudyHeader({
       <h1 className="mt-4 text-5xl leading-none text-ink sm:text-7xl">{title}</h1>
       <p className="mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink sm:text-3xl">{subtitle}</p>
 
-      <dl className="mt-14 grid gap-x-10 gap-y-6 border-t border-line pt-8 text-sm sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-14 grid gap-x-10 gap-y-6 border-t border-line pt-8 text-base sm:grid-cols-2 lg:grid-cols-4">
         {meta.map((item) => (
           <div key={item.label}>
-            <dt className="text-muted">{item.label}</dt>
+            <dt className="text-sm text-muted">{item.label}</dt>
             <dd className="mt-1 text-ink">{item.value}</dd>
           </div>
         ))}

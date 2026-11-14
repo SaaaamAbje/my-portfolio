@@ -26,7 +26,7 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-8 text-sm">
+          <ul className="flex items-center gap-8 text-base">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="text-muted hover:text-ink">

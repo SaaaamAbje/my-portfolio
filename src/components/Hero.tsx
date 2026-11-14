@@ -14,23 +14,23 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 bg-accent px-5 py-3 text-sm font-medium text-white hover:bg-ink"
+            className="inline-flex items-center gap-2 bg-accent px-5 py-3 text-base font-medium text-white hover:bg-ink"
           >
             View projects
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
-          <a href="#contact" className="text-sm font-medium text-ink underline underline-offset-4 hover:text-accent">
+          <a href="#contact" className="text-base font-medium text-ink underline underline-offset-4 hover:text-accent">
             Get in touch
           </a>
         </div>
 
-        <dl className="mt-16 grid max-w-2xl gap-6 border-t border-line pt-8 text-sm sm:grid-cols-2">
+        <dl className="mt-16 grid max-w-2xl gap-6 border-t border-line pt-8 text-base sm:grid-cols-2">
           <div>
-            <dt className="text-muted">Current focus</dt>
+            <dt className="text-sm text-muted">Current focus</dt>
             <dd className="mt-1 text-ink">{hero.focus}</dd>
           </div>
           <div>
-            <dt className="text-muted">Availability</dt>
+            <dt className="text-sm text-muted">Availability</dt>
             <dd className="mt-1 text-ink">{hero.availability}</dd>
           </div>
         </dl>

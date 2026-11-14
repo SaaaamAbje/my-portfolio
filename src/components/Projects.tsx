@@ -23,12 +23,12 @@ function ProjectTitle({ project }: { project: Project }) {
 
 function CaseStudyLink({ project }: { project: Project }) {
   if (!project.caseStudy) {
-    return <p className="mt-6 text-sm text-muted">Case study coming soon</p>;
+    return <p className="mt-6 text-base text-muted">Case study coming soon</p>;
   }
   return (
     <Link
       href={project.caseStudy}
-      className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-accent underline-offset-4 hover:underline"
+      className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-medium text-accent underline-offset-4 hover:underline"
     >
       Read the case study
       <span className="sr-only">: {project.title}</span>
@@ -59,16 +59,16 @@ export function Projects() {
                 <h4 className="mt-3 font-serif text-3xl font-medium text-ink sm:text-4xl">
                   <ProjectTitle project={project} />
                 </h4>
-                <p className="mt-4 leading-relaxed text-muted">{project.summary}</p>
+                <p className="mt-4 text-lg leading-relaxed text-muted">{project.summary}</p>
 
-                <dl className="mt-6 space-y-2 border-t border-line pt-6 text-sm">
+                <dl className="mt-6 space-y-2 border-t border-line pt-6 text-base">
                   {[
                     ["Role", project.role],
                     ["Tools", project.tools],
                     ["Year", project.year],
                   ].map(([label, value]) => (
                     <div key={label} className="flex gap-4">
-                      <dt className="w-16 shrink-0 text-muted">{label}</dt>
+                      <dt className="w-16 shrink-0 pt-0.5 text-sm text-muted">{label}</dt>
                       <dd className="text-ink">{value}</dd>
                     </div>
                   ))}
@@ -97,7 +97,7 @@ export function Projects() {
               <p className="mt-1 text-sm text-muted">{project.category}</p>
             </div>
             <p className="leading-relaxed text-muted">{project.summary}</p>
-            <p className="text-sm text-muted md:text-right">
+            <p className="text-base text-muted md:text-right">
               <span className="sr-only">Year: </span>
               {project.year}
             </p>

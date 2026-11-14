@@ -51,7 +51,7 @@ export default function TerrraCaseStudy() {
         <div className="mx-auto max-w-5xl px-6 pt-8">
           <Link
             href="/#projects"
-            className="inline-flex min-h-11 items-center gap-2 text-sm text-muted hover:text-ink"
+            className="inline-flex min-h-11 items-center gap-2 text-base text-muted hover:text-ink"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             All projects
@@ -324,7 +324,7 @@ export default function TerrraCaseStudy() {
             {showcaseScreens.map((screen) => (
               <li key={screen}>
                 <ImagePlaceholder label={`Terrra ${screen}`} note="[Insert full-size mobile screen mockup]" aspect="aspect-[9/19]" />
-                <p className="mt-3 text-sm text-ink">{screen}</p>
+                <p className="mt-3 text-base text-ink">{screen}</p>
               </li>
             ))}
           </ul>
@@ -383,12 +383,12 @@ export default function TerrraCaseStudy() {
             </p>
 
             <div className="mt-16 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-muted">
+              <p className="text-base text-muted">
                 Next Project: <span className="text-ink">[Insert your next portfolio project]</span>
               </p>
               <Link
                 href="/#projects"
-                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink hover:text-accent"
+                className="inline-flex min-h-11 items-center gap-2 text-base font-medium text-ink hover:text-accent"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Back to all projects

@@ -22,7 +22,7 @@ export function ImagePlaceholder({
       className={`flex w-full flex-col items-center justify-center gap-2 border border-line bg-subtle px-4 text-center text-muted ${aspect}`}
     >
       <ImageIcon className="h-6 w-6" aria-hidden="true" />
-      <span className="text-xs">{note}</span>
+      <span className="text-sm">{note}</span>
     </div>
   );
 }
