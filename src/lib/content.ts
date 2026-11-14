@@ -5,14 +5,14 @@
 */
 
 export const site = {
-  name: "[Your Name]",
+  name: "Sam Gabriel A. Espeleta",
   role: "UI/UX Designer and Frontend Developer",
   school: "BSIT, De La Salle Lipa",
-  title: "[Your Name] | UI/UX Design and Frontend Development",
-  /** Appended to every sub-page title, e.g. "Terrra case study | [Your Name]". */
-  titleTemplate: "%s | [Your Name]",
+  title: "Sam Gabriel A. Espeleta | UI/UX Design and Frontend Development",
+  /** Appended to every sub-page title, e.g. "Terrra case study | Sam Gabriel A. Espeleta". */
+  titleTemplate: "%s | Sam Gabriel A. Espeleta",
   description:
-    "Portfolio of [Your Name], a third-year BSIT student at De La Salle Lipa focused on UI/UX design and frontend development.",
+    "Portfolio of Sam Gabriel A. Espeleta, a third-year BSIT student at De La Salle Lipa focused on UI/UX design and frontend development.",
 };
 
 export const navLinks = [
@@ -23,10 +23,9 @@ export const navLinks = [
 ] as const;
 
 export const hero = {
-  eyebrow: "Third-year BSIT student, De La Salle Lipa",
-  heading: "I design and build clear, usable interfaces.",
-  intro:
-    "I'm [Your Name], looking for a UI/UX design or frontend development internship. [Add one or two sentences about what you care about in your work.]",
+  tagline:
+    "UI/UX designer and frontend developer. Third-year BSIT student at De La Salle Lipa, looking for an internship.",
+  intro: "[Add one or two sentences, in your own words, about what you care about in your work.]",
   focus: "[Add current focus]",
   availability: "[Add internship availability, e.g. start month and hours]",
 };

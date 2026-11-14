@@ -1,14 +1,14 @@
 import { ArrowRight } from "lucide-react";
-import { hero } from "@/lib/content";
+import { hero, site } from "@/lib/content";
 
 export function Hero() {
   return (
     <section id="top" aria-labelledby="hero-heading">
       <div className="mx-auto max-w-5xl px-6 pb-20 pt-20 sm:pb-28 sm:pt-28">
-        <p className="text-sm text-muted">{hero.eyebrow}</p>
-        <h1 id="hero-heading" className="mt-5 max-w-3xl text-4xl leading-[1.1] text-ink sm:text-6xl">
-          {hero.heading}
+        <h1 id="hero-heading" className="max-w-4xl text-5xl leading-[1.05] text-ink sm:text-7xl">
+          {site.name}
         </h1>
+        <p className="mt-6 max-w-2xl font-serif text-2xl leading-snug text-ink sm:text-3xl">{hero.tagline}</p>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{hero.intro}</p>
 
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
