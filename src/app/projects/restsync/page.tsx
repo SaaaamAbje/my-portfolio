@@ -347,10 +347,10 @@ export default function RestSyncCaseStudy() {
 
             <div className="mt-16 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
               <Link
-                href="/projects/terrra"
+                href="/projects/omcr"
                 className="group inline-flex min-h-11 items-center gap-2 text-base text-muted transition-colors duration-200 hover:text-ink"
               >
-                Next Project: <span className="font-medium text-ink">Terrra</span>
+                Next Project: <span className="font-medium text-ink">OMCR Document Request System</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
               </Link>
               <Link
