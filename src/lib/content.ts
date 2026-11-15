@@ -99,10 +99,16 @@ export const projects: Project[] = [
     slug: "omcr-document-request-system",
     title: "OMCR Document Request System",
     category: "System Development",
-    summary: "[Add a one-sentence summary of what the system does and who uses it.]",
-    role: "[Add your role]",
-    tools: "[Add technologies used]",
-    year: "[Add year]",
+    summary:
+      "A bilingual web system for the Office of the Municipal Civil Registrar in Rosario, Batangas. Residents request civil registry documents, book appointments and track status online. Staff manage requests in a secure, real-time dashboard with analytics and an audit log. Built solo from June to November 2026 with vanilla JavaScript and Supabase, and deployed on Vercel.",
+    role: "Solo developer (AI-assisted)",
+    tools: "HTML, CSS, JavaScript, Supabase, Vercel",
+    year: "2026",
+    caseStudy: "/projects/omcr",
+    image: {
+      src: "/projects/omcr/cover.png",
+      alt: "OMCR Document Request System: the Submit a Document Request form with personal information fields, beside panels listing available documents and office hours",
+    },
   },
   {
     slug: "animoexpress",
