@@ -23,8 +23,9 @@ export const metadata: Metadata = {
 /*
   OMCR Document Request System case study. All facts come from Sam's project
   brief (November 2026). Keep the status line accurate: the office has not
-  yet confirmed regular use. The admin login screenshot is left out until
-  permission to show the staff photo is confirmed.
+  yet confirmed regular use. No email provider is connected yet, so emails
+  are listed under Next Steps. Sam confirmed the staff photo on the admin
+  login screenshot may be shown.
 */
 
 const omcr = projects.find((project) => project.slug === "omcr-document-request-system")!;
@@ -48,6 +49,11 @@ const screens = {
     "appointment.png",
     "Book an Appointment screen: a November 2026 calendar with past dates and Sundays greyed out, an appointment summary and visit reminders",
     "Appointment booking. Past dates and Sundays are blocked, and the summary updates as a date and time are chosen.",
+  ),
+  adminLogin: shot(
+    "admin-login.png",
+    "Staff Admin Portal sign-in screen: email and password fields and a Sign In to Dashboard button over a photo of OMCR staff outside the Rosario municipal hall",
+    "Staff sign-in. Each staff member signs in with their own account; sessions time out after 30 idle minutes.",
   ),
   track: shot(
     "track.png",
@@ -167,7 +173,7 @@ export default function OmcrCaseStudy() {
           <List
             items={[
               "A request form with government ID and selfie upload. Images are compressed in the browser to a maximum of 720px at JPEG quality 0.75.",
-              "Printable request and appointment slips, and automatic confirmation and status emails in both languages.",
+              "Printable request and appointment slips.",
               "Residents can cancel their own Pending request, giving a reason.",
             ]}
           />
@@ -187,6 +193,7 @@ export default function OmcrCaseStudy() {
           <p>
             <Strong>Staff dashboard:</Strong>
           </p>
+          <Figure wide shot={screens.adminLogin} />
           <List
             items={[
               "Live search and filtering, with inline status updates: Pending, Processing, Ready for Pickup, Completed, Cancelled and Absent",
@@ -260,7 +267,7 @@ export default function OmcrCaseStudy() {
               "SMS notifications through Semaphore, for residents without email",
               "Split the two large single-file apps into separate CSS and JavaScript modules",
               "Migrate to React, Vite, Tailwind and TypeScript",
-              "Move email sending to Resend for production volume",
+              "Connect an email provider (Resend) to send bilingual confirmation and status emails",
             ]}
           />
         </CaseSection>
