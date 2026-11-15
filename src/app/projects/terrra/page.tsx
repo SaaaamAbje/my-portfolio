@@ -10,6 +10,7 @@ import {
   Strong,
   SubHeading,
 } from "@/components/case-study/CaseStudy";
+import { BrandSheet } from "@/components/case-study/BrandSheet";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ProjectImage } from "@/components/ProjectImage";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -65,6 +66,7 @@ export default function TerrraCaseStudy() {
 
         <CaseStudyHeader
           title="Terrra"
+          mark="/projects/terrra/mark.png"
           subtitle="Designing a Community-Based Waste Management and Environmental Awareness Application"
           meta={[
             { label: "Project Type", value: "UI/UX Design · Academic Research · Mobile Application Concept · Senior High School Capstone" },
@@ -308,10 +310,39 @@ export default function TerrraCaseStudy() {
             The visual direction of Terrra should communicate environmental awareness,
             accessibility, and community involvement.
           </p>
+
+          {/*
+            Colours were sampled from the logo file and an app screenshot.
+            Confirm the exact values against the Figma file.
+          */}
+          <BrandSheet
+            logo={{
+              src: "/projects/terrra/logo.png",
+              alt: "Terrra logo: a blue globe wrapped in a green ribbon, beside the Terrra wordmark in green",
+              width: 1195,
+              height: 490,
+            }}
+            colors={[
+              { name: "Terrra Green", hex: "#008625", usage: "Wordmark and globe ribbon" },
+              { name: "Globe Blue", hex: "#8AB1FF", usage: "Globe in the logo mark" },
+              { name: "App Olive", hex: "#718355", usage: "App home screen background" },
+            ]}
+            typefaces={[
+              { role: "Wordmark", name: "[Add typeface]" },
+              { role: "App headings", name: "[Add typeface]" },
+              { role: "App body", name: "[Add typeface]" },
+            ]}
+            inUse={{
+              src: "/projects/terrra/app-home.png",
+              alt: "Top of the Terrra app home screen: the logo with the tagline “Terrra where change begins.” on an olive green background",
+              width: 358,
+              height: 210,
+              caption: "Home screen header with the logo and tagline.",
+            }}
+          />
           <PendingNote>
-            [Showcase the actual visual decisions used in your application, including: color
-            palette, typography, iconography, buttons and interactive components, navigation
-            patterns, cards and content layouts, and mobile interface screens.]
+            [Still to show: iconography, buttons and interactive components, navigation patterns,
+            cards and content layouts, and mobile interface screens.]
           </PendingNote>
           <ImagePlaceholder
             label="Terrra design system and UI components"

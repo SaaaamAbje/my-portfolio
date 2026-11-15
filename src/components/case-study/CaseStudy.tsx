@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { delay } from "@/lib/motion";
 
@@ -12,15 +13,24 @@ export function CaseStudyHeader({
   title,
   subtitle,
   meta,
+  mark,
 }: {
   title: string;
   subtitle: string;
   meta: MetaItem[];
+  /** The project's own logo mark (square, transparent), shown beside the title. */
+  mark?: string;
 }) {
   return (
     <header className="mx-auto max-w-5xl px-6 pb-16 pt-16 sm:pb-20 sm:pt-24">
       <p className="animate-intro text-sm text-muted">Case study</p>
-      <h1 className="animate-intro mt-4 text-5xl leading-none text-ink sm:text-7xl">{title}</h1>
+      <div className="animate-intro mt-4 flex items-center gap-4 sm:gap-6">
+        {mark && (
+          // Decorative: the title next to it already names the project.
+          <Image src={mark} alt="" width={256} height={256} preload className="h-12 w-12 shrink-0 sm:h-16 sm:w-16" />
+        )}
+        <h1 className="text-5xl leading-none text-ink sm:text-7xl">{title}</h1>
+      </div>
       <p className="animate-intro mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink sm:text-3xl" style={delay(120)}>
         {subtitle}
       </p>
