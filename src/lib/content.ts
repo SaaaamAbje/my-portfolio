@@ -40,6 +40,12 @@ export type Project = {
   year: string;
   /** Route of the full case study, once it exists. */
   caseStudy?: string;
+  /**
+   * Project thumbnail. Export at 1600×1000 (16:10) into public/projects/<slug>/,
+   * e.g. { src: "/projects/terrra/cover.png", alt: "Terrra home, tracker and learning screens" }.
+   * Describe what the screens show in alt. Until set, a neutral placeholder is shown.
+   */
+  image?: { src: string; alt: string };
 };
 
 export const projects: Project[] = [
@@ -71,6 +77,23 @@ export const projects: Project[] = [
     role: "[Add your role]",
     tools: "[Add tools used]",
     year: "[Add year]",
+  },
+  {
+    // Sources: RestSync capstone proposal and github.com/SaaaamAbje/restsync.
+    // Built as a front-end prototype; the Node.js backend is planned.
+    slug: "restsync",
+    title: "RestSync",
+    category: "System Development",
+    summary:
+      "A web-based booking and management system for local funeral homes, with conflict-free chapel scheduling, add-on customization with live stock, and itemized billing, across a client portal and an admin portal.",
+    role: "Sole proponent",
+    tools: "HTML5, CSS3, JavaScript (ES6+), HTML5 Canvas API",
+    year: "2026",
+    caseStudy: "/projects/restsync",
+    image: {
+      src: "/projects/restsync/client-schedule.png",
+      alt: "RestSync scheduling screen: a calendar, three chapels with availability, and service start times",
+    },
   },
   {
     slug: "omcr-document-request-system",
@@ -124,11 +147,12 @@ export const skillGroups = [
 export const contact = {
   heading: "Let's talk about an internship.",
   text: "[Add a sentence about the kind of internship or team you're looking for.]",
-  email: "[Add email address]",
+  email: "samabjelina@gmail.com",
+  /** Put the PDF in public/ (e.g. public/resume.pdf) and set href to "/resume.pdf". */
+  resume: { label: "Download résumé (PDF)", href: "[Add résumé PDF]" },
   links: [
-    { label: "LinkedIn", href: "[Add LinkedIn URL]" },
-    { label: "GitHub", href: "[Add GitHub URL]" },
-    { label: "Résumé (PDF)", href: "[Add résumé link]" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/sam-gabriel-abjelina/" },
+    { label: "GitHub", href: "https://github.com/SaaaamAbje" },
   ],
 };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {
   Callout,
@@ -10,8 +10,12 @@ import {
   Strong,
   SubHeading,
 } from "@/components/case-study/CaseStudy";
+import { BrandSheet } from "@/components/case-study/BrandSheet";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { ProjectImage } from "@/components/ProjectImage";
 import { SiteHeader } from "@/components/SiteHeader";
+import { projects } from "@/lib/content";
+import { delay } from "@/lib/motion";
 
 export const metadata: Metadata = {
   title: "Terrra case study",
@@ -24,6 +28,8 @@ export const metadata: Metadata = {
   filled in. Replace each ImagePlaceholder with a real image when screenshots
   are ready.
 */
+
+const terrra = projects.find((project) => project.slug === "terrra")!;
 
 const findings = [
   { indicator: "Awareness of waste management", mean: "3.02", interpretation: "High" },
@@ -51,15 +57,16 @@ export default function TerrraCaseStudy() {
         <div className="mx-auto max-w-5xl px-6 pt-8">
           <Link
             href="/#projects"
-            className="inline-flex min-h-11 items-center gap-2 text-base text-muted hover:text-ink"
+            className="group inline-flex min-h-11 items-center gap-2 text-base text-muted transition-colors duration-200 hover:text-ink"
           >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
             All projects
           </Link>
         </div>
 
         <CaseStudyHeader
           title="Terrra"
+          mark="/projects/terrra/mark.png"
           subtitle="Designing a Community-Based Waste Management and Environmental Awareness Application"
           meta={[
             { label: "Project Type", value: "UI/UX Design · Academic Research · Mobile Application Concept · Senior High School Capstone" },
@@ -72,8 +79,8 @@ export default function TerrraCaseStudy() {
           ]}
         />
 
-        <div className="mx-auto max-w-5xl px-6 pb-16 sm:pb-20">
-          <ImagePlaceholder label="Terrra cover image" note="[Insert cover image]" aspect="aspect-[16/9]" />
+        <div className="animate-intro mx-auto max-w-5xl px-6 pb-16 sm:pb-20" style={delay(360)}>
+          <ProjectImage project={terrra} sizes="(min-width: 1024px) 976px, 100vw" preload />
         </div>
 
         <CaseSection id="overview" number="01" title="Project Overview">
@@ -303,10 +310,39 @@ export default function TerrraCaseStudy() {
             The visual direction of Terrra should communicate environmental awareness,
             accessibility, and community involvement.
           </p>
+
+          {/*
+            Colours were sampled from the logo file and an app screenshot.
+            Confirm the exact values against the Figma file.
+          */}
+          <BrandSheet
+            logo={{
+              src: "/projects/terrra/logo.png",
+              alt: "Terrra logo: a blue globe wrapped in a green ribbon, beside the Terrra wordmark in green",
+              width: 1195,
+              height: 490,
+            }}
+            colors={[
+              { name: "Terrra Green", hex: "#008625", usage: "Wordmark and globe ribbon" },
+              { name: "Globe Blue", hex: "#8AB1FF", usage: "Globe in the logo mark" },
+              { name: "App Olive", hex: "#718355", usage: "App home screen background" },
+            ]}
+            typefaces={[
+              { role: "Wordmark", name: "[Add typeface]" },
+              { role: "App headings", name: "[Add typeface]" },
+              { role: "App body", name: "[Add typeface]" },
+            ]}
+            inUse={{
+              src: "/projects/terrra/app-home.png",
+              alt: "Top of the Terrra app home screen: the logo with the tagline “Terrra where change begins.” on an olive green background",
+              width: 358,
+              height: 210,
+              caption: "Home screen header with the logo and tagline.",
+            }}
+          />
           <PendingNote>
-            [Showcase the actual visual decisions used in your application, including: color
-            palette, typography, iconography, buttons and interactive components, navigation
-            patterns, cards and content layouts, and mobile interface screens.]
+            [Still to show: iconography, buttons and interactive components, navigation patterns,
+            cards and content layouts, and mobile interface screens.]
           </PendingNote>
           <ImagePlaceholder
             label="Terrra design system and UI components"
@@ -383,14 +419,18 @@ export default function TerrraCaseStudy() {
             </p>
 
             <div className="mt-16 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-base text-muted">
-                Next Project: <span className="text-ink">[Insert your next portfolio project]</span>
-              </p>
+              <Link
+                href="/projects/restsync"
+                className="group inline-flex min-h-11 items-center gap-2 text-base text-muted transition-colors duration-200 hover:text-ink"
+              >
+                Next Project: <span className="font-medium text-ink">RestSync</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
               <Link
                 href="/#projects"
-                className="inline-flex min-h-11 items-center gap-2 text-base font-medium text-ink hover:text-accent"
+                className="group inline-flex min-h-11 items-center gap-2 text-base font-medium text-ink transition-colors duration-200 hover:text-accent"
               >
-                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
                 Back to all projects
               </Link>
             </div>
