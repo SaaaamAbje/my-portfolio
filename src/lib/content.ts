@@ -79,6 +79,18 @@ export const projects: Project[] = [
     year: "[Add year]",
   },
   {
+    // Source: RestSync capstone project proposal (De La Salle Lipa, CITE). Still a
+    // proposal: describe it as proposed until the system is built and evaluated.
+    slug: "restsync",
+    title: "RestSync",
+    category: "System Development",
+    summary:
+      "A proposed web-based platform for local funeral homes that combines conflict-free chapel scheduling, package customization with live add-on inventory, and itemized billing in one system.",
+    role: "Sole proponent",
+    tools: "HTML5, CSS3, JavaScript (ES6), Node.js (planned)",
+    year: "[Add year]",
+  },
+  {
     slug: "omcr-document-request-system",
     title: "OMCR Document Request System",
     category: "System Development",
