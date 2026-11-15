@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {
   Callout,
@@ -419,9 +419,13 @@ export default function TerrraCaseStudy() {
             </p>
 
             <div className="mt-16 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-base text-muted">
-                Next Project: <span className="text-ink">[Insert your next portfolio project]</span>
-              </p>
+              <Link
+                href="/projects/restsync"
+                className="group inline-flex min-h-11 items-center gap-2 text-base text-muted transition-colors duration-200 hover:text-ink"
+              >
+                Next Project: <span className="font-medium text-ink">RestSync</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
               <Link
                 href="/#projects"
                 className="group inline-flex min-h-11 items-center gap-2 text-base font-medium text-ink transition-colors duration-200 hover:text-accent"

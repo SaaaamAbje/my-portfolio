@@ -109,7 +109,22 @@ export function Projects() {
               </h4>
               <p className="mt-1 text-sm text-muted">{project.category}</p>
             </div>
-            <p className="leading-relaxed text-muted">{project.summary}</p>
+            <div>
+              <p className="leading-relaxed text-muted">{project.summary}</p>
+              {project.caseStudy && (
+                <Link
+                  href={project.caseStudy}
+                  className="group/cta mt-2 inline-flex min-h-11 items-center gap-2 text-base font-medium text-accent underline-offset-4 hover:underline"
+                >
+                  Read the case study
+                  <span className="sr-only">: {project.title}</span>
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform duration-200 group-hover/cta:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+              )}
+            </div>
             <p className="text-base text-muted md:text-right">
               <span className="sr-only">Year: </span>
               {project.year}

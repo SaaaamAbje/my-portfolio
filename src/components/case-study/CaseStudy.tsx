@@ -115,3 +115,63 @@ export function PendingNote({ children }: { children: ReactNode }) {
 export function Strong({ children }: { children: ReactNode }) {
   return <strong className="font-semibold text-ink">{children}</strong>;
 }
+
+export type Shot = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption: string;
+};
+
+/*
+  Real screenshots. "wide" figures break out of the reading column to the full
+  page width on large screens, so interface text stays legible. Clicking an
+  image opens it at full size in a new tab.
+*/
+const WIDE = "lg:-ml-[17rem] lg:w-[61rem]";
+
+function ShotImage({ shot, sizes }: { shot: Shot; sizes: string }) {
+  return (
+    <a
+      href={shot.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block overflow-hidden border border-line"
+      aria-label={`Open full-size image: ${shot.alt}`}
+    >
+      <Image
+        src={shot.src}
+        alt={shot.alt}
+        width={shot.width}
+        height={shot.height}
+        sizes={sizes}
+        className="h-auto w-full transition-transform duration-500 ease-out-soft group-hover:scale-[1.01]"
+      />
+    </a>
+  );
+}
+
+/** One screenshot with a caption. */
+export function Figure({ shot, wide = false }: { shot: Shot; wide?: boolean }) {
+  return (
+    <figure className={wide ? WIDE : undefined}>
+      <ShotImage shot={shot} sizes={wide ? "(min-width: 1024px) 976px, 100vw" : "(min-width: 1024px) 672px, 100vw"} />
+      <figcaption className="mt-3 text-sm text-muted">{shot.caption}</figcaption>
+    </figure>
+  );
+}
+
+/** Two screenshots side by side (stacked on small screens), full page width. */
+export function FigurePair({ shots }: { shots: [Shot, Shot] }) {
+  return (
+    <div className={`grid gap-6 sm:grid-cols-2 ${WIDE}`}>
+      {shots.map((shot) => (
+        <figure key={shot.src}>
+          <ShotImage shot={shot} sizes="(min-width: 1024px) 476px, (min-width: 640px) 50vw, 100vw" />
+          <figcaption className="mt-3 text-sm text-muted">{shot.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}

@@ -79,16 +79,21 @@ export const projects: Project[] = [
     year: "[Add year]",
   },
   {
-    // Source: RestSync capstone project proposal (De La Salle Lipa, CITE). Still a
-    // proposal: describe it as proposed until the system is built and evaluated.
+    // Sources: RestSync capstone proposal and github.com/SaaaamAbje/restsync.
+    // Built as a front-end prototype; the Node.js backend is planned.
     slug: "restsync",
     title: "RestSync",
     category: "System Development",
     summary:
-      "A proposed web-based platform for local funeral homes that combines conflict-free chapel scheduling, package customization with live add-on inventory, and itemized billing in one system.",
+      "A web-based booking and management system for local funeral homes, with conflict-free chapel scheduling, add-on customization with live stock, and itemized billing, across a client portal and an admin portal.",
     role: "Sole proponent",
-    tools: "HTML5, CSS3, JavaScript (ES6), Node.js (planned)",
-    year: "[Add year]",
+    tools: "HTML5, CSS3, JavaScript (ES6+), HTML5 Canvas API",
+    year: "2026",
+    caseStudy: "/projects/restsync",
+    image: {
+      src: "/projects/restsync/client-schedule.png",
+      alt: "RestSync scheduling screen: a calendar, three chapels with availability, and service start times",
+    },
   },
   {
     slug: "omcr-document-request-system",
