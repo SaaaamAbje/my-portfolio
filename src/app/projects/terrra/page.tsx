@@ -42,7 +42,7 @@ const findings = [
 
 const showcaseScreens = [
   "Home Screen",
-  "Garbage Truck Tracker",
+  "[Add another completed screen]",
   "Educational Resources",
   "Community Leaderboards",
   "Communitree",
@@ -72,7 +72,7 @@ export default function TerrraCaseStudy() {
             { label: "Project Type", value: "UI/UX Design · Academic Research · Mobile Application Concept · Senior High School Capstone" },
             { label: "Project Location", value: "Barangay Mataas na Lupa, Lipa City, Batangas" },
             { label: "Platform", value: "Mobile Application" },
-            { label: "Role", value: "[Your Role / Specific Contributions]" },
+            { label: "Role", value: "UI/UX Designer" },
             { label: "Tools", value: "[Figma / Other Tools Used]" },
             { label: "Project Duration", value: "Academic Year 2023–2024" },
             { label: "Team", value: "Group of 9 (SHS capstone)" },
@@ -210,7 +210,7 @@ export default function TerrraCaseStudy() {
           </p>
           <p>The following are the key features explored in the project:</p>
 
-          <SubHeading>Garbage Truck Tracker</SubHeading>
+          <SubHeading>Garbage Truck Tracker (design in progress)</SubHeading>
           <p>
             A proposed tracking feature that would help residents monitor garbage collection
             activities and stay informed about collection schedules.
@@ -231,11 +231,6 @@ export default function TerrraCaseStudy() {
             encourages residents to take part in building a cleaner environment.
           </p>
 
-          <PendingNote>
-            [Note to self: These features represent the proposed application concept and should be
-            presented as implemented only if supported by your actual final design or working
-            prototype.]
-          </PendingNote>
         </CaseSection>
 
         <CaseSection id="information-architecture" number="06" title="Information Architecture">
