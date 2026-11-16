@@ -230,13 +230,6 @@ export default function TerrraCaseStudy() {
             A community-oriented concept that represents collective environmental contributions and
             encourages residents to take part in building a cleaner environment.
           </p>
-          <PendingNote>
-            [Note to self: These features are described as proposed. Only call one implemented once
-            it is in the final Figma design or a working prototype. The Garbage Truck Tracker design
-            is still in progress: when it is finished, add its screen to section 10 in place of
-            &ldquo;Add another completed screen&rdquo;, and remove &ldquo;(design in
-            progress)&rdquo; from its heading. Remove this note before sharing the portfolio.]
-          </PendingNote>
 
         </CaseSection>
 
