@@ -55,7 +55,7 @@ export const projects: Project[] = [
     category: "UI/UX",
     summary:
       "A proposed community-based waste management and environmental awareness mobile app, shaped by research with residents of Barangay Mataas na Lupa, Lipa City.",
-    role: "[Your Role / Specific Contributions]",
+    role: "UI/UX Designer",
     tools: "[Figma / Other Tools Used]",
     year: "2023–2024",
     caseStudy: "/projects/terrra",
