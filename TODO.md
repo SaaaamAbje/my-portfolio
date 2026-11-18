@@ -18,7 +18,7 @@ Private notes for Sam. Not shown on the website.
       (`public/projects/terrra/cover.png`, then add `image` to the Terrra entry in `src/lib/content.ts`)
 - [ ] Section 10, final screens: Home, Educational Resources, Community Leaderboards, Communitree,
       and two other completed screens
-- [ ] Section 06: sitemap / information architecture diagram
+- [x] Section 06: information architecture diagram (added)
 - [ ] Section 07: user flow diagram
 - [ ] Section 08: low-fidelity wireframes, high-fidelity Figma designs, design iterations
 - [ ] Section 09: typefaces (wordmark, app headings, app body); design system and UI component

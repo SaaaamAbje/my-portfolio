@@ -129,7 +129,8 @@ export type Shot = {
   page width on large screens, so interface text stays legible. Clicking an
   image opens it at full size in a new tab.
 */
-const WIDE = "lg:-ml-[17rem] lg:w-[61rem]";
+// Above the pinned section heading (and opaque), so the heading slides under it on scroll.
+const WIDE = "relative z-10 bg-white lg:-ml-[17rem] lg:w-[61rem]";
 
 function ShotImage({ shot, sizes }: { shot: Shot; sizes: string }) {
   return (
