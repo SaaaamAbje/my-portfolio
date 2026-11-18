@@ -5,6 +5,7 @@ import {
   Callout,
   CaseSection,
   CaseStudyHeader,
+  Figure,
   List,
   PendingNote,
   Strong,
@@ -246,10 +247,16 @@ export default function TerrraCaseStudy() {
               <><Strong>Engagement</Strong>: Making environmental contributions more visible through community-oriented features.</>,
             ]}
           />
-          <ImagePlaceholder
-            label="Terrra sitemap or information architecture diagram"
-            note="[Insert your actual sitemap or information architecture diagram here.]"
-            aspect="aspect-[16/10]"
+          <Figure
+            wide
+            shot={{
+              src: "/projects/terrra/information-architecture-v2.png",
+              width: 2000,
+              height: 975,
+              alt: "Terrra information architecture in three columns. 01 Information, what users learn: news alerts, educational modules, collection schedule, truck and bin locator. 02 Participation, what users do: clean-up drives, seminars and events, volunteer projects, DIY marketplace. 03 Engagement, what keeps them coming back: Communitree, leaderboards, badges and rewards, community challenges. All three lead to the outcome: better attitudes and awareness on waste management.",
+              caption:
+                "Information architecture: what users learn, what they do, and what keeps them coming back, all leading to better attitudes and awareness on waste management.",
+            }}
           />
         </CaseSection>
 
