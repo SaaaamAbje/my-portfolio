@@ -19,7 +19,7 @@ Private notes for Sam. Not shown on the website.
 - [ ] Section 10, final screens: Home, Educational Resources, Community Leaderboards, Communitree,
       and two other completed screens
 - [x] Section 06: information architecture diagram (added)
-- [ ] Section 07: user flow diagram
+- [x] Section 07: user flow diagram (added)
 - [ ] Section 08: low-fidelity wireframes, high-fidelity Figma designs, design iterations
 - [ ] Section 09: typefaces (wordmark, app headings, app body); design system and UI component
       screenshots (icons, buttons, navigation, cards)

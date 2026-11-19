@@ -276,10 +276,16 @@ export default function TerrraCaseStudy() {
               "Stay informed about environmental activities.",
             ]}
           />
-          <ImagePlaceholder
-            label="Terrra user flow diagram"
-            note="[Insert your actual user flow diagram here.]"
-            aspect="aspect-[16/10]"
+          <Figure
+            wide
+            shot={{
+              src: "/projects/terrra/user-flow.png",
+              width: 1700,
+              height: 680,
+              alt: "Terrra user flow: Open Terrra, then Navigate features, which branches into two paths. Information: access educational resources or waste collection info. Participation: explore community initiatives and participation features. Both paths lead to Stay informed.",
+              caption:
+                "User flow: from opening Terrra, residents branch into information or participation, and both paths keep them informed.",
+            }}
           />
         </CaseSection>
 
