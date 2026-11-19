@@ -153,12 +153,27 @@ function ShotImage({ shot, sizes }: { shot: Shot; sizes: string }) {
   );
 }
 
-/** One screenshot with a caption. */
+/** Full width of a wide figure on large screens, in CSS pixels. */
+const WIDE_WIDTH = 976;
+
+/**
+ * One screenshot with a caption. A wide figure whose image is narrower than the
+ * full width is shown at its natural size, centred, instead of being stretched
+ * (stretching a small export makes its text blurry).
+ */
 export function Figure({ shot, wide = false }: { shot: Shot; wide?: boolean }) {
+  const natural = wide && shot.width < WIDE_WIDTH;
+  const sizes = natural
+    ? `(min-width: ${shot.width}px) ${shot.width}px, 100vw`
+    : wide
+      ? "(min-width: 1024px) 976px, 100vw"
+      : "(min-width: 1024px) 672px, 100vw";
   return (
     <figure className={wide ? WIDE : undefined}>
-      <ShotImage shot={shot} sizes={wide ? "(min-width: 1024px) 976px, 100vw" : "(min-width: 1024px) 672px, 100vw"} />
-      <figcaption className="mt-3 text-sm text-muted">{shot.caption}</figcaption>
+      <div className={natural ? "mx-auto" : undefined} style={natural ? { maxWidth: shot.width } : undefined}>
+        <ShotImage shot={shot} sizes={sizes} />
+        <figcaption className="mt-3 text-sm text-muted">{shot.caption}</figcaption>
+      </div>
     </figure>
   );
 }
