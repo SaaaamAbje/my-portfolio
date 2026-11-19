@@ -279,12 +279,12 @@ export default function TerrraCaseStudy() {
           <Figure
             wide
             shot={{
-              src: "/projects/terrra/user-flow.png",
-              width: 1700,
-              height: 680,
-              alt: "Terrra user flow: Open Terrra, then Navigate features, which branches into two paths. Information: access educational resources or waste collection info. Participation: explore community initiatives and participation features. Both paths lead to Stay informed.",
+              src: "/projects/terrra/user-flow-v2.png",
+              width: 1568,
+              height: 553,
+              alt: "Terrra user flow: Open Terrra, then Navigate available features, then a decision, Choose a feature. The Information path leads to access educational resources or waste collection info; the Participation path leads to explore community initiatives and participation features. Both paths end at Stay informed.",
               caption:
-                "User flow: from opening Terrra, residents branch into information or participation, and both paths keep them informed.",
+                "User flow: after choosing a feature, residents take the information or participation path, and both keep them informed.",
             }}
           />
         </CaseSection>
