@@ -24,7 +24,7 @@ export const navLinks = [
 
 export const hero = {
   tagline:
-    "UI/UX designer and frontend developer. Third-year BSIT student at De La Salle Lipa, looking for an internship.",
+    "3rd Year IT Student at De La Salle Lipa | Aspiring UI/UX Designer & Web Developer",
   intro: "[Add one or two sentences, in your own words, about what you care about in your work.]",
   focus: "[Add current focus]",
   availability: "[Add internship availability, e.g. start month and hours]",
