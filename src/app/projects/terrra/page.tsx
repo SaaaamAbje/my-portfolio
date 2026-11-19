@@ -250,10 +250,10 @@ export default function TerrraCaseStudy() {
           <Figure
             wide
             shot={{
-              src: "/projects/terrra/information-architecture-v2.png",
-              width: 2000,
-              height: 975,
-              alt: "Terrra information architecture in three columns. 01 Information, what users learn: news alerts, educational modules, collection schedule, truck and bin locator. 02 Participation, what users do: clean-up drives, seminars and events, volunteer projects, DIY marketplace. 03 Engagement, what keeps them coming back: Communitree, leaderboards, badges and rewards, community challenges. All three lead to the outcome: better attitudes and awareness on waste management.",
+              src: "/projects/terrra/information-architecture-v3.png",
+              width: 1568,
+              height: 609,
+              alt: "Terrra information architecture: Terrra branches into three groups, each leading to its features. Information, what users learn: news alerts, educational modules, collection schedule, truck and bin locator. Participation, what users do: clean-up drives, seminars and events, volunteer projects, DIY marketplace. Engagement, what keeps them coming back: Communitree, leaderboards, badges and rewards, community challenges. All three lead to better attitudes and awareness on waste management.",
               caption:
                 "Information architecture: what users learn, what they do, and what keeps them coming back, all leading to better attitudes and awareness on waste management.",
             }}
